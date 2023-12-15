@@ -8,7 +8,7 @@ const path = require('path');
 
 // Load the docx file as binary content
 const content = fs.readFileSync(
-	path.resolve(__dirname, 'Data', 'Input.docx'),
+	path.resolve(__dirname, 'Input', 'input.docx'),
 	'binary'
 );
 
@@ -24,7 +24,10 @@ const doc = new Docxtemplater(zip, {
 
 // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
 doc.render({
-	teste: 'John',
+	titulo_1: 'John Titulos',
+	titulo_2: 'John Sub-Titulos',
+	desc: 'John descrições',
+	alert: 'John alertas',
 });
 
 // Get the zip document and generate it as a nodebuffer
