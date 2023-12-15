@@ -1,11 +1,78 @@
-<mxfile host="app.diagrams.net" modified="2023-12-15T02:03:33.965Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 OPR/104.0.0.0" etag="M90npJbSW6nCvI_GTiqV" version="22.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-15T02:57:40.786Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 OPR/104.0.0.0" etag="tEO1PNNGt_QdN06nnbSB" version="22.1.9" type="github">
   <diagram name="Página-1" id="P4Xqz6mp-tyX9BtgRjY-">
     <mxGraphModel dx="1393" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="8aFkk8AgMmwA8aJIXS-g-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="350" y="580" width="120" height="60" as="geometry" />
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-7" value="Chama" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-6" target="8aFkk8AgMmwA8aJIXS-g-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-6" value="templater;js&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-9" value="Valida" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-8" target="8aFkk8AgMmwA8aJIXS-g-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-8" value="Módulo de gerenciamento de arquivos de input" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-19" value="Não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-15" target="8aFkk8AgMmwA8aJIXS-g-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="560" as="targetPoint" />
+            <mxPoint x="590" y="550" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="590" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-21" value="Sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-15" target="8aFkk8AgMmwA8aJIXS-g-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="670" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-15" value="Existe algum arquivo .docx?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="555" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-20" value="Encerra a aplicação com erro informando que não existe nenhum arquivo valido na pasta de inputs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="450" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-22" target="8aFkk8AgMmwA8aJIXS-g-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-22" value="Retorna a lista de arquivos docx válidos na pasta inputs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="630" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-26" value="Chama" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-24" target="8aFkk8AgMmwA8aJIXS-g-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1060" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-24" value="Módulo de gerenciamento de arquivos de input" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-30" value="Solicita" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-28" target="8aFkk8AgMmwA8aJIXS-g-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-28" value="Módulo de criação do template" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-32" value="Gera" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="8aFkk8AgMmwA8aJIXS-g-29" target="8aFkk8AgMmwA8aJIXS-g-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1480" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-29" value="Prompt do usuário contendo o json de replacement das variaveis" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="640" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8aFkk8AgMmwA8aJIXS-g-33" value="Arquivo docx com as informações do json alteradas na pasta de output" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="640" width="140" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
