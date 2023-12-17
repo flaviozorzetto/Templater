@@ -144,5 +144,6 @@ dist
 # flavio content
 input/
 output/
+payload/
 
 # End of https://www.toptal.com/developers/gitignore/api/node
