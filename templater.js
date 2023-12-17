@@ -22,7 +22,6 @@ function ensureNecessaryFilesExists() {
 	createFolder(outputFolderName);
 	createFolder(payloadFolderName);
 
-	console.log('Reading payload folder content');
 	let payloadFolderContent = fs.readdirSync(
 		path.resolve(rootPath, payloadFolderName)
 	);
