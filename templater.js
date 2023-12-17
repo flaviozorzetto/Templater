@@ -18,11 +18,8 @@ function createFolder(folderName) {
 }
 
 function ensureNecessaryFilesExists() {
-	console.log('Ensuring input folder exists');
 	createFolder(inputFolderName);
-	console.log('Ensuring outpot folder exists');
 	createFolder(outputFolderName);
-	console.log('Ensuring payload folder exists');
 	createFolder(payloadFolderName);
 
 	console.log('Reading payload folder content');
@@ -96,8 +93,15 @@ function generateOutputFile(file) {
 	let payloadData = fs
 		.readFileSync(path.resolve(rootPath, payloadFolderName, 'data.txt'))
 		.toString();
+	let payloadJsonData;
 	try {
-		let payloadJsonData = JSON.parse(payloadData);
+		payloadJsonData = JSON.parse(payloadData);
+	} catch (error) {
+		throw new Error(
+			'Erro: não foi possivel converter o arquivo para um JSON válido, garanta que o arquivo data.txt tenha um formato válido seguindo a seguinte estrutura: { "nome_da_variavel": "valor_da_variavel", "nome_da_variavel_2", "valor_da_variavel_2" }, site de referencia: https://support.oneskyapp.com/hc/en-us/articles/208047697-JSON-sample-files'
+		);
+	}
+	try {
 		const docxContent = fs.readFileSync(file.filePath, 'binary');
 		const zipDocx = new PizZip(docxContent);
 		const doc = new Docxtemplater(zipDocx, {
@@ -115,13 +119,11 @@ function generateOutputFile(file) {
 		);
 	} catch (error) {
 		throw new Error(error);
-		// 'Erro: não foi possivel converter o arquivo para um JSON válido, garanta que o arquivo data.txt tenha um formato válido seguindo a seguinte estrutura: { "nome_da_variavel": "valor_da_variavel", "nome_da_variavel_2", "valor_da_variavel_2" }, site de referencia: https://support.oneskyapp.com/hc/en-us/articles/208047697-JSON-sample-files'
 	}
 }
 
 function executeProgram() {
 	console.log('Starting program execution');
-	console.log('nome do arquivo ' + path.resolve());
 	try {
 		ensureNecessaryFilesExists();
 		let files = getFilesList();
