@@ -8,20 +8,26 @@ let inputFolderName = 'input';
 let outputFolderName = 'output';
 let payloadFolderName = 'payload';
 
+let rootPath = path.resolve();
+
 function createFolder(folderName) {
-	let directoryContent = fs.readdirSync(__dirname);
+	let directoryContent = fs.readdirSync(rootPath);
 	if (!directoryContent.filter(f => f == folderName).length == 1) {
 		fs.mkdirSync(folderName);
 	}
 }
 
 function ensureNecessaryFilesExists() {
+	console.log('Ensuring input folder exists');
 	createFolder(inputFolderName);
+	console.log('Ensuring outpot folder exists');
 	createFolder(outputFolderName);
+	console.log('Ensuring payload folder exists');
 	createFolder(payloadFolderName);
 
+	console.log('Reading payload folder content');
 	let payloadFolderContent = fs.readdirSync(
-		path.resolve(__dirname, payloadFolderName)
+		path.resolve(rootPath, payloadFolderName)
 	);
 
 	if (payloadFolderContent.filter(f => f == 'data.txt').length == 0) {
@@ -34,12 +40,12 @@ function ensureNecessaryFilesExists() {
 function getFilesList() {
 	let validDocxFilePaths = [];
 	const docxRegexMatcher = /(\.)(\w*)$/g;
-	const files = fs.readdirSync(path.resolve(__dirname, 'input'));
+	const files = fs.readdirSync(path.resolve(rootPath, 'input'));
 
 	files.forEach((file, index) => {
 		let match = file.match(docxRegexMatcher)[0];
 		if (match == '.docx') {
-			const validDocxFilePath = path.resolve(__dirname, 'input', file);
+			const validDocxFilePath = path.resolve(rootPath, 'input', file);
 			validDocxFilePaths.push({
 				fileName: file,
 				filePath: validDocxFilePath,
@@ -88,7 +94,7 @@ function selectFileFromList(files) {
 
 function generateOutputFile(file) {
 	let payloadData = fs
-		.readFileSync(path.resolve(__dirname, payloadFolderName, 'data.txt'))
+		.readFileSync(path.resolve(rootPath, payloadFolderName, 'data.txt'))
 		.toString();
 	try {
 		let payloadJsonData = JSON.parse(payloadData);
@@ -104,7 +110,7 @@ function generateOutputFile(file) {
 			compression: 'DEFLATE',
 		});
 		fs.writeFileSync(
-			path.resolve(__dirname, outputFolderName, file.fileName),
+			path.resolve(rootPath, outputFolderName, file.fileName),
 			buf
 		);
 	} catch (error) {
@@ -114,6 +120,8 @@ function generateOutputFile(file) {
 }
 
 function executeProgram() {
+	console.log('Starting program execution');
+	console.log('nome do arquivo ' + path.resolve());
 	try {
 		ensureNecessaryFilesExists();
 		let files = getFilesList();
