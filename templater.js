@@ -161,9 +161,7 @@ async function getExcelJsonDataListFromChoice(choice) {
 
 	let hasAllFieldsFulfilled = xlsxObject.every((row, index) => {
 		const hasRowFulfilled = row.every(elem => {
-			if (elem == null || elem == undefined) return false;
-
-			return elem.trim() != '';
+			return elem != null || elem != undefined;
 		});
 
 		if (row.length == headersCount && hasRowFulfilled) {
